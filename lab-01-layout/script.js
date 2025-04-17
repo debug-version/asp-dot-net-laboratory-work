@@ -65,14 +65,21 @@ function renderFeatures() {
 // Заполнение Gallery
 function renderGallery() {
   const galleryItems = [
-    "img/book1.jpg",
-    "img/book2.jpg",
-    "img/book3.jpg"
+    { id: 1011, alt: "Книга 1" },
+    { id: 1025, alt: "Книга 2" },
+    { id: 1033, alt: "Книга 3" }
   ];
 
   let html = '<div class="container"><h2>Галерея</h2><div class="gallery-grid">';
-  galleryItems.forEach(src => {
-    html += `<img src="${src}" alt="Книга">`;
+  galleryItems.forEach(item => {
+    html += `
+      <img 
+        src="https://picsum.photos/id/${item.id}/300/400" 
+        srcset="https://picsum.photos/id/${item.id}/150/200 150w, https://picsum.photos/id/${item.id}/300/400 300w"
+        sizes="(max-width: 600px) 150px, 300px"
+        loading="lazy" 
+        alt="${item.alt}">
+    `;
   });
   html += '</div></div>';
   document.getElementById("gallery").innerHTML = html;
