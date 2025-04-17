@@ -153,11 +153,12 @@ document.addEventListener("DOMContentLoaded", () => {
   // Сначала отрисовываем шапку, чтобы появился burger
   renderHeader();
 
-  // Бургер-меню для мобильных
+  // Подключаем бургер-меню после отрисовки
   const burger = document.getElementById("burger");
-  if (burger) {
+  const navMenu = document.getElementById("nav-menu");
+  if (burger && navMenu) {
     burger.addEventListener("click", () => {
-      document.querySelector(".nav-menu").classList.toggle("open");
+      navMenu.classList.toggle("open");
     });
   }
 
