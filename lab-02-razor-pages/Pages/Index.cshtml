@@ -1,127 +1,58 @@
 ﻿@page
 @model MyApp.Namespace.IndexModel
 @{
-    ViewData["Title"] = "Библиотека";
+    ViewData["Title"] = "Главная страница";
 }
 
-<!-- Header -->
-<header class="header">
+@section Styles {
+    <style>
+        /* Можно добавить специфичные стили для этой страницы */
+    </style>
+}
+
+<!-- Hero Section -->
+<section id="hero" class="hero section">
+    <div class="hero-content">
+        <h1>Добро пожаловать в Библиотеку</h1>
+        <p>Откройте для себя мир знаний и научных статей</p>
+        <button class="btn-more" onclick="openModal()">Узнать больше</button>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="about section">
     <div class="container">
-        <nav class="navbar" id="navbar">
-            <div class="logo">Библиотека</div>
-            <ul class="nav-menu">
-                <li><a href="#hero">Главная</a></li>
-                <li><a href="#about">О нас</a></li>
-                <li><a href="#features">Особенности</a></li>
-                <li><a href="#gallery">Галерея</a></li>
-                <li><a href="#contact">Контакты</a></li>
-            </ul>
-            <div class="burger" id="burger">&#9776;</div>
-        </nav>
+        <h2>О нас</h2>
+        <p>Мы предоставляем доступ к обширной коллекции научных и учебных материалов. Наша цель — сделать знания доступными каждому.</p>
     </div>
-</header>
-<!-- /Header -->
+</section>
 
-<!-- Main Content -->
-<main class="main">
-
-    <!-- Hero Section -->
-    <section id="hero" class="hero section">
-        <div class="hero-content">
-            <h1>Добро пожаловать в Библиотека</h1>
-            <p>Откройте для себя мир знаний и научных статей</p>
-            <button class="btn-more" onclick="openModal()">Узнать больше</button>
-        </div>
-    </section>
-    <!-- /Hero Section -->
-
-    <!-- About Section -->
-    <section id="about" class="about section">
-        <div class="container">
-            <h2>О нас</h2>
-            <p>Мы предоставляем доступ к обширной коллекции научных и учебных материалов. Наша цель — сделать знания доступными каждому.</p>
-        </div>
-    </section>
-    <!-- /About Section -->
-
-    <!-- Features Section -->
-    <section id="features" class="features section">
-        <div class="container">
-            <h2>Особенности</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <i class="fas fa-book"></i>
-                    <h3>Тысячи книг</h3>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-brain"></i>
-                    <h3>Научные статьи</h3>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-laptop"></i>
-                    <h3>Доступ онлайн</h3>
-                </div>
+<!-- Features Section -->
+<section id="features" class="features section">
+    <div class="container">
+        <h2>Наши преимущества</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <i class="fas fa-book"></i>
+                <h3>Тысячи книг</h3>
+                <p>Более 50,000 изданий в разных областях знаний</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-brain"></i>
+                <h3>Научные статьи</h3>
+                <p>Доступ к последним исследованиям и публикациям</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-laptop"></i>
+                <h3>Онлайн доступ</h3>
+                <p>Читайте из любой точки мира 24/7</p>
             </div>
         </div>
-    </section>
-    <!-- /Features Section -->
-
-    <!-- Gallery Section -->
-    <section id="gallery" class="gallery section">
-        <div class="container">
-            <h2>Галерея</h2>
-            <div class="gallery-grid">
-                <img src="https://picsum.photos/id/1011/300/400" 
-                     srcset="https://picsum.photos/id/1011/150/200 150w, https://picsum.photos/id/1011/300/400 300w"
-                     sizes="(max-width: 600px) 150px, 300px"
-                     loading="lazy" 
-                     alt="Книга 1">
-                <img src="https://picsum.photos/id/1025/300/400" 
-                     srcset="https://picsum.photos/id/1025/150/200 150w, https://picsum.photos/id/1025/300/400 300w"
-                     sizes="(max-width: 600px) 150px, 300px"
-                     loading="lazy" 
-                     alt="Книга 2">
-                <img src="https://picsum.photos/id/1033/300/400" 
-                     srcset="https://picsum.photos/id/1033/150/200 150w, https://picsum.photos/id/1033/300/400 300w"
-                     sizes="(max-width: 600px) 150px, 300px"
-                     loading="lazy" 
-                     alt="Книга 3">
-            </div>
-        </div>
-    </section>
-    <!-- /Gallery Section -->
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact section">
-        <div class="container">
-            <h2>Связаться с нами</h2>
-            <form id="contactForm">
-                <input type="text" name="name" placeholder="Ваше имя" required />
-                <input type="email" name="email" placeholder="Email" required />
-                <textarea name="message" placeholder="Сообщение" required></textarea>
-                <button type="submit">Отправить</button>
-            </form>
-            <div class="contact-info">
-                <p><strong>Адрес:</strong> г. Москва, ул. Науки, 42</p>
-                <p><strong>Телефон:</strong> +7 (999) 123-45-67</p>
-                <p><strong>Email:</strong> info@library.ru</p>
-            </div>
-        </div>
-    </section>
-    <!-- /Contact Section -->
-
-</main>
-<!-- /Main Content -->
-
-<!-- Footer -->
-<footer id="footer" class="footer">
-    <div class="container footer-content">
-        <div class="socials">
-            <a href="#"><i class="fab fa-vk"></i></a>
-            <a href="#"><i class="fab fa-telegram"></i></a>
-            <a href="#"><i class="fab fa-github"></i></a>
-        </div>
-        <p>&copy; 2025 Библиотека. Все права защищены.</p>
     </div>
-</footer>
-<!-- /Footer -->
+</section>
+
+@section Scripts {
+    <script>
+	/* Можно добавить специфичные скрипты для этой страницы */
+    </script>
+}
